@@ -69,7 +69,7 @@ def promotion_image():
                 '''
 
 
-@app.route('/form_sample', methods=['POST', 'GET'])
+@app.route('/astronaut_selection', methods=['POST', 'GET'])
 def form_sample():
     if request.method == 'GET':
         return f'''<!doctype html>
@@ -82,7 +82,7 @@ def form_sample():
                             integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
                             crossorigin="anonymous">
                             <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style1.css')}" />
-                            <title>Пример формы</title>
+                            <title>Отбор астронавтов</title>
                           </head>
                           <body>
                             <h1>Анкета претендента</h1>
