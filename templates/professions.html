@@ -4,10 +4,12 @@
 
     <h2>И на Марсе будут яблоки цвести!</h2>
     {% for item in prof_list['professions'] %}
-        {% if param == 'ul'%}
-            <li>{{item['content']}}</li>
-        {% elif param == 'ol'%}
-            <ol>{{item['content']}}</ol>
+        {% if param == 'ul' %}
+            <li>{{ item['title'] }}</li>
+        {% elif param == 'ol' %}
+            <ol>{{ loop.index }}. {{ item['title'] }}</ol>
+        {% else %}}
+            <div> Купи слона </div>
         {% endif %}
     {% endfor %}
 
