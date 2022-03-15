@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ profile }}, добро пожаловать на корабль!</title>
+</head>
+<body>
+ {% if 'зоолог' in profile %}
+        <h1>{{ profile }}, рады приветствовать вас на нашем корабле!</h1>
+        <img src='../static/img/riana.jpg' width="640" height="480">
+ {% elif 'повар' in profile %}
+        <h1>{{ profile }}, ждем ваших успехов!</h1>
+        <img src='../static/img/borsh.jpg' width="640" height="480">
+{% elif 'программист' in profile %}
+        <h1>{{ profile }}</h1>
+        <div> Я не понял задачу и откуда мне брать картинки, зато понял как делать условия</div>
+{% else %}
+        <div>Привет, твоя профессия нам неизвестна, и, скорее всего, в космосе не нужна</div>
+ {% endif %}
+</body>
+</html>
