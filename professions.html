@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h2>И на Марсе будут яблоки цвести!</h2>
+    {% for item in prof_list['professions'] %}
+        {% if param == 'ul'%}
+            <li>{{item['content']}}</li>
+        {% elif param == 'ol'%}
+            <ol>{{item['content']}}</ol>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}
