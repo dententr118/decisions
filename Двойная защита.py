@@ -1,4 +1,4 @@
-from flask import Flask, url_for, request, render_template
+from flask import Flask, url_for, request, render_template, redirect
 from http.server import HTTPServer, CGIHTTPRequestHandler
 import json
 from flask_wtf import FlaskForm
@@ -11,10 +11,11 @@ app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 
 class LoginForm(FlaskForm):
-    username = StringField('Логин', validators=[DataRequired()])
-    password = PasswordField('Пароль', validators=[DataRequired()])
-    remember_me = BooleanField('Запомнить меня')
-    submit = SubmitField('Войти')
+    username_A = StringField('id астронавта', validators=[DataRequired()])
+    password_A = PasswordField('Пароль астронавта', validators=[DataRequired()])
+    username_C = StringField('id капитана', validators=[DataRequired()])
+    password_C = PasswordField('Пароль капитана', validators=[DataRequired()])
+    submit = SubmitField('Доступ')
 
 
 @app.route('/')
@@ -54,7 +55,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         return redirect('/success')
-    return render_template('login.html', title='Авторизация', form=form)
+    return render_template('login.html', title='Аварийный доступ', form=form)
 
 
 if __name__ == '__main__':
