@@ -18,11 +18,10 @@ def training(prof=''):
 
 @app.route('/list_prof/<num>')
 def list_prof(num=''):
-    with open('profiles.json', 'rt', encoding='utf8') as f:
+    with open('static/json/profiles.json', 'rt', encoding='utf8') as f:
         new_list = json.loads(f.read())
     return render_template('professions.html', param=num, prof_list=new_list)
 
 
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
-    
